@@ -3,13 +3,18 @@ import json
 from bs4 import BeautifulSoup
 userid='apikey'
 passwd='34739f806ab1b3caa301a77871a35600c1470ac8b13187bdb8b0c5fa1cad0404'
-url='http://192.168.99.100:30080/api/v3/work_packages/'
+auth=(userid, passwd)
+urlbase='http://192.168.99.100:30080/api/v3/'
+subdir='work_packages/'
+objid=''
+url=urlbase+subdir+objid
+headers={'Content-Type': 'application/json'}
 data=json.dumps(
     {
-        "subject":"飛び込みの仕事",
+        "subject":"暫定の仕事",
         "description": {
             "format": "textile",
-            "raw": "日本語項目は登録できるかな？"
+            "raw": "日本語項目が登録できるか確認"
         },
         "project":{
             "href":"/api/v3/projects/2",
@@ -25,6 +30,6 @@ data=json.dumps(
             "priority":{"href":"/api/v3/priorities/1"}
         }
     })
-html_doc = requests.post(url, data, headers={'Content-Type': 'application/json'}, auth=(userid, passwd)).text
+html_doc = requests.post(url, data, headers=headers, auth=auth).text
 soup = BeautifulSoup(html_doc, 'html.parser') # BeautifulSoup
 print(soup.prettify())
