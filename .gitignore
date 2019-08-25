@@ -1,1 +1,4 @@
-WebScraping/__pycache__/OpenProjectApi.cpython-37.pyc
+__pycache__/
+build/
+dist/
+*.spec
