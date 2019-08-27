@@ -5,7 +5,7 @@ class OpenProjectApi:
     def __init__(self, hostname=None):
         self.__init__
         self.userid='apikey'
-        self.passwd='34739f806ab1b3caa301a77871a35600c1470ac8b13187bdb8b0c5fa1cad0404'
+        self.passwd='4c822580dcf5a49c9a63ffa3380f8bfd7b6c48e1656f7392ac9de1b821319bc0'
         self.auth=(self.userid, self.passwd)
         self.protcol='http://'
         if hostname is None:
