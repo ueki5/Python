@@ -4,23 +4,22 @@ from bs4 import BeautifulSoup
 import OpenProjectApi
 data=json.dumps(
     {
-        "subject":"暫定の仕事",
+        "project":{
+            "href":"/api/v3/projects/3"
+        },
+        "subject":"テストタスク",
         "description": {
             "format": "textile",
-            "raw": "日本語項目が登録できるか確認"
+            "raw": "登録形式確認用"
         },
-        "project":{
-            "href":"/api/v3/projects/2",
-            "title":"Demo project"
-        },
-        "startDate":"2019-08-26",
-        "dueDate":"2019-08-27",
-        "estimatedTime":"PT4H",
-        "percentageDone":39,
+        "startDate":"2019-08-28",
+        "dueDate":"2019-08-29",
+        "estimatedTime":"PT8H",
         "_links": {
             "type": {"href":"/api/v3/types/1"},
-            "status":{"href":"/api/v3/statuses/1"},
-            "priority":{"href":"/api/v3/priorities/1"}
+            "status":{"href":"/api/v3/statuses/8"},
+            "priority":{"href":"/api/v3/priorities/1"},
+            "assignee":{"href":"/api/v3/users/5"}
         }
     })
 opnprj=OpenProjectApi.OpenProjectApi()
