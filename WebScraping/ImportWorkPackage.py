@@ -1,6 +1,7 @@
 import json
 import csv
 import pprint
+import pandas as pd
 import OpenProjectApi
 
 # 設定・定義
@@ -44,6 +45,12 @@ reader = csv.DictReader(csvfile,
         fieldnames=fieldnames,
         )
 
+# 担当者チェック
+users = pd.unique([task['assignee'] for task in reader])
+for usr in users:
+   reply = opnprj.get('users', usrdic[usr])
+   print(reply)
+
 # １件ずつタスクに変換し、REST APIて登録
 for taskin in reader:
     # 登録用データ編集（辞書型）
@@ -65,6 +72,6 @@ for taskin in reader:
                                     + taskin['priority']}
     taskout['_links']['assignee'] = {'href':'/api/v3/users/' 
                                     + usrdic[taskin['assignee']]}
-    # REST API CREATEメソッド呼び出し
-    reply = opnprj.create('work_packages', json.dumps(taskout))
-    print(reply)
+#    # REST API CREATEメソッド呼び出し
+#    reply = opnprj.create('work_packages', json.dumps(taskout))
+#    print(reply)

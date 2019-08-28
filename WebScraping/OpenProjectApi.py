@@ -1,7 +1,7 @@
 import requests
 import json
 class OpenProjectApi:
-    def __init__(self, hostname, passwd):
+    def __init__(self, hostname=None, passwd=None):
         self.__init__
         self.userid='apikey'
         self.passwd=passwd
