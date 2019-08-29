@@ -12,19 +12,19 @@ class OpenProjectApi:
         self.headers={'Content-Type': 'application/json'}
     def get_url(self, objtype, objid):
         return (self.protcol + self.hostname + self.apiroot + objtype + '/' + objid)
-    def get(self, objtype, objid):
+    def get(self, objtype, objid, params=None):
         url=self.get_url(objtype, objid)
-        doc = requests.get(url, headers=self.headers, auth=self.auth).text
+        doc = requests.get(url, headers=self.headers, auth=self.auth, params=None).text
         return json.loads(doc)
-    def create(self, objtype, data):
+    def create(self, objtype, data, params=None):
         url=self.get_url(objtype, '')
-        doc = requests.post(url, data, headers=self.headers, auth=self.auth).text
+        doc = requests.post(url, data, headers=self.headers, auth=self.auth, params=None).text
         return json.loads(doc)
-    def update(self, objtype, objid, data):
+    def update(self, objtype, objid, data, params=None):
         url=self.get_url(objtype, objid)
-        doc = requests.patch(url, data, headers=self.headers, auth=self.auth).text
+        doc = requests.patch(url, data, headers=self.headers, auth=self.auth, params=None).text
         return json.loads(doc)
-    def delete(self, objtype, objid):
+    def delete(self, objtype, objid, params=None):
         url=self.get_url(objtype, objid)
-        doc = requests.delete(url, headers=self.headers, auth=self.auth).text
+        doc = requests.delete(url, headers=self.headers, auth=self.auth, params=None).text
         return json.loads(doc)
