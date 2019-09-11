@@ -135,21 +135,21 @@ args = parser.parse_args()
 cfgpath = args.projectid + ".json"
 csvtktpath = args.projectid + "_tickets.csv"
 sjistktpath = args.projectid + "_tickets_sjis.csv"
-impshpath = args.projectid + "_impall.sh"
-delshpath = args.projectid + "_delall.sh"
+impshpath = args.projectid + "_imp_all.sh"
+delshpath = args.projectid + "_del_all.sh"
 
 # 設定ファイル存在チェック
 if not(os.path.isfile(cfgpath)):
     # 存在しない場合、テンプレートを作成して終了
     with open(cfgpath, encoding="utf-8", mode="w") as jsnfile:
         dic = {}
-        dic["CustomerID"] = ""
+        dic["CustomerID"] = "利用者グループIDを指定して下さい"
         dic["Service"] = ""
-        dic["TktNumPrefix"] = ""
+        dic["TktNumPrefix"] = "チケットNoの前置詞（重複回避用）を指定して下さい"
         dic["Folder"] = ""
-        dic["bookname"] = ""
+        dic["bookname"] = "管理台帳(excel)のファイル名を指定して下さい"
         dic["ticketinfo"] = {}
-        dic["ticketinfo"]["sheetname"] = ""
+        dic["ticketinfo"]["sheetname"] = "管理台帳(excel)のシート名を指定して下さい"
         dic["ticketinfo"]["startrow"] = 0
         dic["ticketinfo"]["checkclm"] = ""
         dic["ticketinfo"]["format"] = csvfmt
@@ -185,6 +185,7 @@ with open(cfgpath, encoding="utf-8", mode="w") as jsnfile:
     # jsnfile.write(json.dumps(prjinf, ensure_ascii=False, indent=4))
 # インポートシェル書き込み
 with open(impshpath, encoding="utf-8", newline='', mode='w') as impshfile:
+    impshfile.write("#!/bin/bash\n")
     impshfile.write("perl /opt/FJSVbsmotrs/bin/otrs.ImportExport.pl -n 000006 -a import -i /root/import/{}\n".format(csvtktpath))
 # CSVファイル、削除シェル書き込み
 with open(csvtktpath, encoding="utf-8", newline='', mode='w') as csvtktfile, \
@@ -197,7 +198,7 @@ with open(csvtktpath, encoding="utf-8", newline='', mode='w') as csvtktfile, \
                             lineterminator='\n', 
                             quoting=csv.QUOTE_NONNUMERIC)
     csvwriter.writeheader()
-    delshfile.write("#!/bin/sh\n")
+    delshfile.write("#!/bin/bash\n")
     for rec in exlrecs:
         recw = cnvrec(rec)
         csvwriter.writerow(recw)
