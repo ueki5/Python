@@ -31,16 +31,15 @@ csvfmt = {
     "Owner": 9,
     "Responsible": 10,
     "CreateTime": 11,
-    "CreateUser": 12,
-    "ChangeTime": 13,
-    "DynamicField_ITSMDueDate": 14,
-    "DynamicField_ITSMImpact": 15,
-    "DynamicField_IncidentType": 16,
-    "DynamicField_TaiouKousuu": 17,
-    "DynamicField_XITSMCloseDate": 18,
-    "DynamicField_XITSMGeneralTextarea1": 19,
-    "DynamicField_XITSMGeneralTextarea3": 20,
-    "DynamicField_XITSMHostName": 21,
+    "DynamicField_ITSMDueDate": 12,
+    "DynamicField_ITSMImpact": 13,
+    "DynamicField_IncidentType": 14,
+    "DynamicField_TaiouKousuu": 15,
+    "DynamicField_XITSMCloseDate": 16,
+    "DynamicField_XITSMGeneralTextarea1": 17,
+    "DynamicField_XITSMGeneralTextarea3": 18,
+    "DynamicField_XITSMHostName": 19,
+    "DynamicField_ProcessManagementProcessID": 20,
 }
 #################################################
 # 関数
@@ -122,8 +121,10 @@ def cnvrec(rec):
     if len(rec["DynamicField_ITSMImpact"]) == 0: rec["DynamicField_ITSMImpact"] = "3 normal"
     # クローズ日時（任意項目）
     if len(rec["DynamicField_XITSMCloseDate"]) == 0: rec["DynamicField_XITSMCloseDate"] = "9999/12/31 00:00:00"
-    # 対応期限（必須項目）
+    # 対応期限（任意項目）
     if len(rec["DynamicField_ITSMDueDate"]) == 0: rec["DynamicField_ITSMDueDate"] = "9999/12/31 00:00:00"
+    # アクティビティID（テスト用）
+    rec["DynamicField_ProcessManagementProcessID"] = "インシデント対応 (テスト)"
     return rec
 ###################################################
 # メイン処理
