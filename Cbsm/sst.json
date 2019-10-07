@@ -1,48 +1,54 @@
 {
     "CustomerID": "SST",
     "Service": "APM二シス",
-    "TktNumPrefix": "X057606009",
     "Folder": "二シス問合せ窓口フォルダ",
     "bookname": "オフサイト契約依頼事項.xlsx",
+    "TicketNumber": {
+        "Prefix": "X057606009-",
+        "Length": 6
+    },
     "ticketinfo": {
         "sheetname": "依頼事項一覧",
-        "startrow": 4,
+        "startrow": 5,
         "checkclm": "DynamicField_XITSMGeneralTextarea1",
         "format": {
-            "TicketNumber": 1,
-            "Title": 1,
-            "Priority": 9,
-            "State": 17,
-            "DynamicField_IncidentType": 14,
-            "CustomerUser": 4,
-            "Owner": 16,
-            "Responsible": 16,
-            "CreateTime": 5,
-            "DynamicField_ITSMDueDate": 11,
-            "DynamicField_TaiouKousuu": 13,
-            "DynamicField_XITSMCloseDate": 18,
-            "DynamicField_XITSMGeneralTextarea1": 2,
-            "DynamicField_XITSMGeneralTextarea3": 10,
-            "DynamicField_XITSMHostName": {
-                "NO": 1,
-                "課題一覧No": 3,
-                "依頼者": 4,
-                "見積依頼時間": 6,
-                "実施依頼日": 7,
-                "実施依頼時間": 8,
-                "優先順位": 9,
-                "予定工数(h)": 12,
-                "依頼種別": 14,
-                "システム": 15,
-                "担当": 16,
-                "ステータス": 17,
-                "変更フラグ": 19
+            "TicketNumber": "B",
+            "Title": "B",
+            "Priority": "J",
+            "State": "R",
+            "DynamicField_IncidentType": "O",
+            "CustomerUser": "E",
+            "Owner": "Q",
+            "Responsible": "Q",
+            "CreateTime": "F",
+            "DynamicField_ITSMDueDate": "L",
+            "DynamicField_TaiouKousuu": "N",
+            "DynamicField_XITSMCloseDate": "S",
+            "DynamicField_XITSMGeneralTextarea1": "C",
+            "DynamicField_XITSMGeneralTextarea3": "K",
+            "DynamicField_ProjectSpecific": {
+                "課題一覧No": "D",
+                "依頼者": "E",
+                "見積依頼時間": "G",
+                "実施依頼日": "H",
+                "実施依頼時間": "I",
+                "優先順位": "J",
+                "予定工数(h)": "M",
+                "依頼種別": "O",
+                "システム": "P",
+                "担当": "Q",
+                "ステータス": "R",
+                "変更フラグ": "T"
             }
         },
         "replaceclm": {
             "Title": {
                 "regexp": "^(.*)$",
                 "repval": "オフサイト保守No.\\1"
+            },
+            "DynamicField_ITSMDueDate": {
+                "regexp": "^－$",
+                "repval": "9999/12/31 00:00:00"
             }
         }
     },
@@ -67,7 +73,8 @@
         "18": "1 very low",
         "19": "1 very low",
         "20": "1 very low",
-        "21": "1 very low"
+        "21": "1 very low",
+        "": ""
     },
     "mstState": {
         "SST/保守T\n確認待ち": "承認待ち",
@@ -94,7 +101,8 @@
         "SST榎本": "SST榎本",
         "SST永井": "SST永井",
         "SST近藤": "SST近藤",
-        "SST金児": "SST金児"
+        "SST金児": "SST金児",
+        "": "未登録"
     },
     "mstUser": {
         "大槻": "otsuki.kazuhiro",
@@ -111,9 +119,12 @@
         "浅野\n菊地\n植木\n小川": "asano_hidenori",
         "浅野\n菊地\n里見": "asano_hidenori",
         "菊地": "ueki5",
-        "－": ""
+        "－": "未登録",
+        "": "未登録"
     },
-    "mstImpact": {},
+    "mstImpact": {
+        "": ""
+    },
     "mstIncidentType": {
         "PG修正": "1",
         "その他作業": "1",

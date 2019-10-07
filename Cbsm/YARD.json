@@ -1,0 +1,110 @@
+{
+    "CustomerID": "YARD",
+    "Service": "APM二シス",
+    "Folder": "二シス問合せ窓口フォルダ",
+    "bookname": "YARDシステム保守案件管理台帳_20190930.xlsx",
+    "TicketNumber": {
+        "Prefix": "X001130436-01-",
+        "Length": 6
+    },
+    "ticketinfo": {
+        "sheetname": "YARDシステム案件管理台帳",
+        "startrow": 2,
+        "checkclm": "DynamicField_XITSMGeneralTextarea1",
+        "format": {
+            "TicketNumber": "A",
+            "Title": "A",
+            "Priority": "G",
+            "State": "D",
+            "CustomerUser": "B",
+            "Owner": "L",
+            "Responsible": "C",
+            "CreateTime": "K",
+            "DynamicField_ITSMDueDate": "I",
+            "DynamicField_ITSMImpact": "G",
+            "DynamicField_IncidentType": "F",
+            "DynamicField_TaiouKousuu": "P",
+            "DynamicField_XITSMCloseDate": "O",
+            "DynamicField_XITSMGeneralTextarea1": "J",
+            "DynamicField_XITSMGeneralTextarea3": "M",
+            "DynamicField_ProjectSpecific": {
+                "お客様名": "B",
+                "発行者（担当者）": "C",
+                "状態": "D",
+                "発行日": "E",
+                "分類": "F",
+                "重要度": "G",
+                "依頼種別": "H",
+                "回答希望日": "I",
+                "受付日": "K",
+                "回答者（担当者）": "L",
+                "回答日": "N",
+                "完了日付": "O",
+                "対応工数": "P"
+            }
+        },
+        "replaceclm": {
+            "Title": {
+                "regexp": "^(.*)$",
+                "repval": "YARDシステム保守No.\\1"
+            },
+            "DynamicField_TaiouKousuu": {
+                "regexp": "[^0-9.]",
+                "repval": ""
+            }
+        }
+    },
+    "mstPriority": {
+        "中": "3 normal",
+        "大": "4 high",
+        "小": "2 low"
+    },
+    "mstState": {
+        "完了": "クローズ",
+        "対応中": "対応中"
+    },
+    "mstCustomerUser": {
+        "-": "未登録",
+        "ヤクルト本社\n丹羽様": "YAKULT丹羽",
+        "ヤクルト本社\n原島様": "YAKULT原島",
+        "ヤクルト本社\n小林様": "YAKULT小林",
+        "ヤクルト本社\n尾崎様": "YAKULT尾崎",
+        "ヤクルト本社\n竹林様": "YAKULT竹林",
+        "ヤクルト本社\n簗場": "YAKULT簗場",
+        "ヤクルト本社\n簗場様": "YAKULT簗場",
+        "ヤクルト本社\n野上様": "YAKULT野上",
+        "ヤクルト本社 \n簗場様": "YAKULT簗場",
+        "ヤクルト本社)\n池田課長": "YAKULT池田",
+        "ヤクルト本社)\n石毛様": "YAKULT石毛",
+        "ヤクルト本社)\n野上様": "YAKULT野上",
+        "ヤクルト本社様": "未登録",
+        "ヤクルト本社）\n森課長": "YAKULT森",
+        "ヤクルト本社）\n池田課長": "YAKULT池田",
+        "ヤクルト本社）\n野上様": "YAKULT野上",
+        "ヤクルト本社）池田課長": "YAKULT池田"
+    },
+    "mstUser": {
+        "": "未登録",
+        "富士通)斎藤": "saito.yumi",
+        "富士通)斎藤、粂谷": "kumegai_ayumi",
+        "富士通)粂谷": "kumegai_ayumi",
+        "富士通）斎藤": "saito.yumi",
+        "富士通）粂谷": "kumegai_ayumi",
+        "富士通）高山": "takayama.hidemi",
+        "ヤクルト本社\n簗場": "未登録",
+        "ヤクルト本社）\n森課長": "未登録",
+        "ヤクルト本社）\n池田課長": "未登録"
+    },
+    "mstImpact": {
+        "": "3 normal",
+        "中": "3 normal",
+        "大": "4 high",
+        "小": "2 low"
+    },
+    "mstIncidentType": {
+        "Q/A": "3",
+        "確認": "1",
+        "要望": "1",
+        "障害": "5"
+    }
+}
