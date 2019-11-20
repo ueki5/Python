@@ -7,3 +7,14 @@ backup/
 *.xlsx
 *.csv
 *.sh
+ConvertToBox/word_file.docx
+Cbsm/IT-TENKO.json
+Cbsm/MakeImportFile.exe
+CheckDirList/dir_list.txt
+CheckDirList/dir_list.txt.out
+ConvertToBox/pdf_file.pdf
+ConvertToBox/pdf_file_keyword.pdf
+ConvertToBox/powerpoint_file.ppt
+ConvertToBox/powerpoint_file.pptx
+ConvertToBox/word_file.doc
+Cbsm/IT-TENKO.json
