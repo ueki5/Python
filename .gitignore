@@ -7,9 +7,9 @@ backup/
 *.xlsx
 *.csv
 *.sh
+*.exe
 ConvertToBox/word_file.docx
 Cbsm/IT-TENKO.json
-Cbsm/MakeImportFile.exe
 CheckDirList/dir_list.txt
 CheckDirList/dir_list.txt.out
 ConvertToBox/pdf_file.pdf
