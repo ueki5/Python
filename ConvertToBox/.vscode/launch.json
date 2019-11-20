@@ -1,0 +1,20 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "test",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args":[
+                "C:\\opt\\社内\\社内活動\\20191016_BOX利用\\確認用",
+                "C:\\opt\\社内\\社内活動\\20191016_BOX利用\\出力用",
+                "C:\\opt\\社内\\社内活動\\20191016_BOX利用\\退避用"
+            ]
+        }
+    ]
+}
