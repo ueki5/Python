@@ -4,17 +4,26 @@ import os
 import DirObject
 
 ##################################
+# ディレクトリチェック関数
+##################################
+def dirCheck(dirPath):
+    fileList = []
+    dirList = []
+    objs = os.listdir(dirPath)
+    for obj in objs:
+        if os.path.isfile(os.path.join(dirPath, obj)):
+            
+##################################
 # メイン処理
 ##################################
 def main():
     # 引数チェック
     parser = argparse.ArgumentParser()
-    parser.add_argument("list_file")
+    parser.add_argument("dir_path")
     args = parser.parse_args()
-    list_file = args.list_file
-    list_file_out = list_file + ".out"
+    dir_path = args.dir_path
     # ディレクトリリスト読込
-    rootDir = None
+    dirCheck(dir_path)
     curStack = []
     with open(list_file,newline="") as infile:
         reader = csv.reader(infile)
