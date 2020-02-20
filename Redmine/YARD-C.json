@@ -1,0 +1,81 @@
+{
+    "CustomerID": "YARD-C",
+    "Service": "APM二シス",
+    "Folder": "二シス問合せ窓口フォルダ",
+    "bookname": "YARD-C保守作業管理台帳.xlsx",
+    "TicketNumber": {
+        "Prefix": "X001130436-02-",
+        "Length": 6
+    },
+    "ticketinfo": {
+        "sheetname": "保守作業管理台帳",
+        "startrow": 6,
+        "checkclm": "Title",
+        "format": {
+            "TicketNumber": "B",
+            "Title": "I",
+            "Priority": "F",
+            "State": "O",
+            "CustomerUser": "D",
+            "Owner": "L",
+            "Responsible": "L",
+            "CreateTime": "K",
+            "DynamicField_ITSMDueDate": "H",
+            "DynamicField_ITSMImpact": "F",
+            "DynamicField_IncidentType": "E",
+            "DynamicField_TaiouKousuu": "Q",
+            "DynamicField_XITSMCloseDate": "P",
+            "DynamicField_XITSMGeneralTextarea1": "J",
+            "DynamicField_XITSMGeneralTextarea3": "M",
+            "DynamicField_ProjectSpecific": {
+                "起票年月日": "C",
+                "起票者": "D",
+                "案件分類": "E",
+                "重要度": "F",
+                "依頼方法": "G",
+                "回答希望日": "H",
+                "受付日": "K",
+                "回答者": "L",
+                "回答日": "N",
+                "状況": "O",
+                "完了年月日": "P",
+                "対応工数": "Q"
+            }
+        },
+        "replaceclm": {
+            "DynamicField_TaiouKousuu": {
+                "regexp": "[^0-9.]",
+                "repval": ""
+            },
+            "DynamicField_ITSMDueDate": {
+                "regexp": "^(未定：調整中|ー)$",
+                "repval": "9999/12/31 00:00:00"
+            }
+        }
+    },
+    "mstPriority": {
+        "中": "3 normal",
+        "大": "4 high"
+    },
+    "mstState": {
+        "完了": "クローズ"
+    },
+    "mstCustomerUser": {
+        "ヤクルト本社)池田課長": "YAKULT池田",
+        "富士通)粂谷": "未登録"
+    },
+    "mstUser": {
+        "富士通)水口": "m-mizuguchi",
+        "富士通)粂谷": "kumegai_ayumi"
+    },
+    "mstImpact": {
+        "中": "3 normal",
+        "大": "4 high"
+    },
+    "mstIncidentType": {
+        "QA": "3",
+        "その他": "1",
+        "データ登録・更新": "2",
+        "要望": "1"
+    }
+}

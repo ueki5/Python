@@ -1,0 +1,110 @@
+{
+    "CustomerID": "IT-TENKO",
+    "Service": "APM二シス",
+    "Folder": "二シス問合せ窓口フォルダ",
+    "bookname": "IT点呼システム_インシデント管理_全顧客.xlsx",
+    "TicketNumber": {
+        "Prefix": "XIT-TENKO-",
+        "Length": 6
+    },
+    "ticketinfo": {
+        "sheetname": "インシデント",
+        "startrow": 5,
+        "checkclm": "DynamicField_XITSMGeneralTextarea1",
+        "format": {
+            "TicketNumber": "B",
+            "Title": "B",
+            "CustomerUser": "H",
+            "CreateTime": "C",
+            "DynamicField_ITSMDueDate": "T",
+            "DynamicField_IncidentType": "J",
+            "DynamicField_TaiouKousuu": "V",
+            "DynamicField_XITSMCloseDate": "U",
+            "DynamicField_XITSMGeneralTextarea1": "K",
+            "DynamicField_XITSMGeneralTextarea3": "N",
+            "DynamicField_ProjectSpecific": {
+                "受付日付": "C",
+                "曜日": "D",
+                "受付時刻": "E",
+                "受付媒体": "F",
+                "区分": "G",
+                "顧客名": "H",
+                "発生営業所": "I",
+                "大区分": "J",
+                "中間対処": "L",
+                "原因": "M",
+                "原因区分Lv1": "O",
+                "原因区分Lv2": "P",
+                "原因区分Lv3": "Q",
+                "対処予定日": "R",
+                "対処実績日": "S",
+                "完了予定日": "T",
+                "完了実績日": "U",
+                "総関与時間（仕事表）": "V",
+                "備考": "W"
+            }
+        },
+        "replaceclm": {
+            "Title": {
+                "regexp": "^(.*)$",
+                "repval": "IT点呼インシデントNo.\\1"
+            },
+            "DynamicField_TaiouKousuu": {
+                "regexp": "[^0-9.]",
+                "repval": ""
+            },
+            "DynamicField_XITSMCloseDate": {
+                "regexp": "^(－|？)$",
+                "repval": "9999/12/31 00:00:00"
+            },
+            "DynamicField_ITSMDueDate": {
+                "regexp": "^(－|？)$",
+                "repval": "9999/12/31 00:00:00"
+            }
+        }
+    },
+    "mstPriority": {
+        "": ""
+    },
+    "mstState": {
+        "": ""
+    },
+    "mstCustomerUser": {
+        "カトーレック": "ITTENKOカトーレック",
+        "カントラロジ": "ITTENKOカントラロジ",
+        "コダ運輸": "ITTENKOコダ運輸",
+        "シモハナ物流": "ITTENKOシモハナ物流",
+        "ディーラ営業経由顧客全社": "ITTENKOディーラ営業",
+        "ノーストランス(ｵﾌﾟﾃｨｿﾘｭｰｼｮﾝ)": "ITTENKOノーストランス",
+        "バンテック": "ITTENKOバンテック",
+        "三和エナジー": "ITTENKO三和エナジー",
+        "中越通運": "ITTENKO中越通運",
+        "丸運ロジスティクス関東（旧：千東運輸）": "ITTENKO丸運ロジ",
+        "国際空輸": "ITTENKO国際空輸",
+        "大沢運送": "ITTENKO大沢運送",
+        "太陽食品販売": "ITTENKO太陽食品販売",
+        "日立物流ダイレックス": "ITTENKO日立物流ダイレックス",
+        "明治ロジテック": "ITTENKO明治ロジ",
+        "栄光": "ITTENKO栄光",
+        "磯部運輸倉庫(愛知計機)": "ITTENKO磯部運輸倉庫",
+        "菱化ロジテック": "ITTENKO菱化ロジ",
+        "遠野運送": "ITTENKO遠野運送",
+        "関東トナミ": "ITTENKO関東トナミ",
+        "関東トナミ運輸": "ITTENKO関東トナミ",
+        "関西急送": "ITTENKO関西急送",
+        "－": "未登録"
+    },
+    "mstUser": {
+        "": "takahashi.taday"
+    },
+    "mstImpact": {
+        "": ""
+    },
+    "mstIncidentType": {
+        "QA": "3",
+        "トラブル": "5",
+        "ハード": "1",
+        "－": "1",
+        "ＱＡ": "3"
+    }
+}

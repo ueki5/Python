@@ -1,0 +1,142 @@
+{
+    "CustomerID": "SST",
+    "Service": "APM二シス",
+    "Folder": "二シス問合せ窓口フォルダ",
+    "bookname": "オフサイト契約依頼事項.xlsx",
+    "TicketNumber": {
+        "Prefix": "X057606009-",
+        "Length": 6
+    },
+    "ticketinfo": {
+        "sheetname": "依頼事項一覧",
+        "startrow": 5,
+        "checkclm": "DynamicField_XITSMGeneralTextarea1",
+        "format": {
+            "TicketNumber": "B",
+            "Title": "B",
+            "Priority": "J",
+            "State": "R",
+            "DynamicField_IncidentType": "O",
+            "CustomerUser": "E",
+            "Owner": "Q",
+            "Responsible": "Q",
+            "CreateTime": "F",
+            "DynamicField_ITSMDueDate": "L",
+            "DynamicField_TaiouKousuu": "N",
+            "DynamicField_XITSMCloseDate": "S",
+            "DynamicField_XITSMGeneralTextarea1": "C",
+            "DynamicField_XITSMGeneralTextarea3": "K",
+            "DynamicField_ProjectSpecific": {
+                "課題一覧No": "D",
+                "依頼者": "E",
+                "見積依頼時間": "G",
+                "実施依頼日": "H",
+                "実施依頼時間": "I",
+                "優先順位": "J",
+                "予定工数(h)": "M",
+                "依頼種別": "O",
+                "システム": "P",
+                "担当": "Q",
+                "ステータス": "R",
+                "変更フラグ": "T"
+            }
+        },
+        "replaceclm": {
+            "Title": {
+                "regexp": "^(.*)$",
+                "repval": "オフサイト保守No.\\1"
+            },
+            "DynamicField_ITSMDueDate": {
+                "regexp": "^－$",
+                "repval": ""
+            }
+        }
+    },
+    "mstPriority": {
+        "1": "5",
+        "2": "4",
+        "3": "4",
+        "4": "4",
+        "5": "3",
+        "6": "3",
+        "7": "3",
+        "8": "3",
+        "9": "3",
+        "10": "2",
+        "11": "2",
+        "12": "2",
+        "13": "2",
+        "14": "2",
+        "15": "2",
+        "16": "1",
+        "17": "1",
+        "18": "1",
+        "19": "1",
+        "20": "1",
+        "21": "1",
+        "": ""
+    },
+    "mstState": {
+        "SST/保守T\n確認待ち": "4",
+        "SST/保守T確認待ち": "4",
+        "再現待ち": "3",
+        "再起動問題\nとして調査中": "3",
+        "回答済み": "4",
+        "完了": "5",
+        "対応中": "2",
+        "未着手": "1"
+    },
+    "mstCustomerUser": {
+        "SBE\n東海林": "Takuya_Tokairin@suntory.co.jp",
+        "SBE\n東海林様": "Takuya_Tokairin@suntory.co.jp",
+        "SBE東海林": "Takuya_Tokairin@suntory.co.jp",
+        "SST\n山本": "Kazuhito_Yamamoto@sst.suntory.co.jp",
+        "SST下村": "Sachiyo_Shimomura@sst.suntory.co.jp",
+        "SST土田": "Masashi_Tsuchida@sst.suntory.co.jp",
+        "SST小林": "Naoki_Kobayashi@sst.suntory.co.jp",
+        "SST山本": "Kazuhito_Yamamoto@sst.suntory.co.jp",
+        "SST島添": "Akira_Shimazoe@sst.suntory.co.jp",
+        "SST御園生": "Satoru_Misonou@sst.suntory.co.jp",
+        "SST松浦": "Miki_Matsuura@sst.suntory.co.jp",
+        "SST榎本": "Shinichi_Enomoto@sst.suntory.co.jp",
+        "SST永井": "Yui_Nagai@sst.suntory.co.jp",
+        "SST近藤": "Yohei_Kondo@sst.suntory.co.jp",
+        "SST金児": "Chika_Kaneko@sst.suntory.co.jp",
+        "": ""
+    },
+    "mstUser": {
+        "大槻": "otsuki.kazuhiro",
+        "大槻\n浅野": "otsuki.kazuhiro",
+        "所": "a_tokoro",
+        "植木": "ueki5",
+        "植木\n浅野": "ueki5",
+        "浅野": "asano.hidenori",
+        "浅野\n大槻": "asano.hidenori",
+        "浅野\n所": "asano.hidenori",
+        "浅野\n植木": "asano.hidenori",
+        "浅野\n植木\n大槻": "asano.hidenori",
+        "浅野\n菊地": "asano.hidenori",
+        "浅野\n菊地\n植木\n小川": "asano.hidenori",
+        "浅野\n菊地\n里見": "asano.hidenori",
+        "菊地": "ueki5",
+        "－": "",
+        "": ""
+    },
+    "mstImpact": {
+        "": ""
+    },
+    "mstIncidentType": {
+        "PG修正": "その他",
+        "その他作業": "その他",
+        "作業": "作業依頼(RQ)",
+        "打合せ": "問合せ(QA)",
+        "瑕疵対応": "FJ起因",
+        "稼働立ち合い": "作業依頼(RQ)",
+        "調査": "問合せ(QA)"
+    }
+}
+
+
+
+
+
