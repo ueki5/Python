@@ -1,5 +1,7 @@
 {
-    "CustomerID": "SST",
+    "apiUrl": "http://10.56.219.26:30080/",
+    "apiKey": "63dff054388ad779a7eafe5d0b9f89a743aa9f0d",
+    "CustomerID": "suntory_sst_hht_suport",
     "bookname": "オフサイト契約依頼事項.xlsx",
     "TicketNumber": {
         "Prefix": "",
