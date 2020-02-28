@@ -7,6 +7,7 @@ import json
 import csv
 import pandas as pd
 import numpy as np
+from redminelib import Redmine
 
 ###################################################
 # 設定・定義
@@ -164,16 +165,13 @@ def cnvval(dic, val):
 # レコード変換
 def cnvrec(rec):
     rec["TicketNumber"] = prjinf["TicketNumber"]["Prefix"] + rec["TicketNumber"].zfill(prjinf["TicketNumber"]["Length"])
-    rec["Folder"] = prjinf["Folder"]
     rec["Priority"] = cnvval(prjinf["mstPriority"], rec["Priority"])
     rec["State"] = cnvval(prjinf["mstState"], rec["State"])
     rec["Type"] = "インシデント"
-    rec["Service"] = prjinf["Service"]
     rec["CustomerID"] = prjinf["CustomerID"]
     rec["CustomerUser"] = cnvval(prjinf["mstCustomerUser"], rec["CustomerUser"])
     rec["Owner"] = cnvval(prjinf["mstUser"], rec["Owner"])
     rec["Responsible"] = cnvval(prjinf["mstUser"], rec["Responsible"])
-    rec["DynamicField_ITSMImpact"] = cnvval(prjinf["mstImpact"], rec["DynamicField_ITSMImpact"])
     rec["DynamicField_IncidentType"] = cnvval(prjinf["mstIncidentType"], rec["DynamicField_IncidentType"])
     for key,val in prjinf["ticketinfo"]["replaceclm"].items():
         rec[key] = re.sub(val["regexp"],val["repval"], rec[key])
