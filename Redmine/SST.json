@@ -1,11 +1,9 @@
 {
     "CustomerID": "SST",
-    "Service": "APM二シス",
-    "Folder": "二シス問合せ窓口フォルダ",
     "bookname": "オフサイト契約依頼事項.xlsx",
     "TicketNumber": {
-        "Prefix": "X057606009-",
-        "Length": 6
+        "Prefix": "",
+        "Length": 0
     },
     "ticketinfo": {
         "sheetname": "依頼事項一覧",
@@ -120,9 +118,6 @@
         "浅野\n菊地\n里見": "asano.hidenori",
         "菊地": "ueki5",
         "－": "",
-        "": ""
-    },
-    "mstImpact": {
         "": ""
     },
     "mstIncidentType": {

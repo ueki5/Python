@@ -21,11 +21,9 @@ delshpath = ""
 csvfmt = {
     "TicketNumber": 0,
     "Title": 1,
-    "Folder": 2,
     "Priority": 3,
     "State": 4,
     "Type": 5,
-    "Service": 6,
     "CustomerID": 7,
     "CustomerUser": 8,
     "Owner": 9,
@@ -149,7 +147,7 @@ def conv2csvfmt(srcdic):
     for key in csvfmt.keys():
         dstdic.setdefault(key, "")
     return dstdic
-# 項目値の重複および空文字を除き、項目値をキーとする辞書を作成
+# 項目値の重複を除き、項目値をキーとする辞書を作成
 def uniquedic(keywds, recs):
     lst = []
     for keywd in keywds:
@@ -179,13 +177,6 @@ def cnvrec(rec):
     rec["DynamicField_IncidentType"] = cnvval(prjinf["mstIncidentType"], rec["DynamicField_IncidentType"])
     for key,val in prjinf["ticketinfo"]["replaceclm"].items():
         rec[key] = re.sub(val["regexp"],val["repval"], rec[key])
-    # ### ここから暫定コード（書式指定のあるダイナミックフィールドは空文字にできない） ###
-    # # 影響度（任意項目）
-    # if len(rec["DynamicField_ITSMImpact"]) == 0: rec["DynamicField_ITSMImpact"] = "3 normal"
-    # # クローズ日時（任意項目）
-    # if len(rec["DynamicField_XITSMCloseDate"]) == 0: rec["DynamicField_XITSMCloseDate"] = "9999/12/31 00:00:00"
-    # # 対応期限（任意項目）
-    # if len(rec["DynamicField_ITSMDueDate"]) == 0: rec["DynamicField_ITSMDueDate"] = "9999/12/31 00:00:00"
     return rec
 ###################################################
 # メイン処理
@@ -235,8 +226,6 @@ addmst(prjinf, "mstState", uniquedic(["State"],exlrecs))
 addmst(prjinf, "mstCustomerUser", uniquedic(["CustomerUser"],exlrecs))
 # 運用者マッピング追加
 addmst(prjinf, "mstUser", uniquedic(["Owner", "Responsible"],exlrecs))
-# 影響度マッピング追加
-addmst(prjinf, "mstImpact", uniquedic(["DynamicField_ITSMImpact"],exlrecs))
 # インシデント分類マッピング追加
 addmst(prjinf, "mstIncidentType", uniquedic(["DynamicField_IncidentType"],exlrecs))
 #####################################################
@@ -255,7 +244,6 @@ for key, val in prjinf["ticketinfo"]["format"].items():
 # JSONファイル書き込み
 with open(cfgpath, encoding="utf-8", mode="w") as jsnfile:
     json.dump(prjinf, jsnfile, ensure_ascii=False, indent=4)
-    # jsnfile.write(json.dumps(prjinf, ensure_ascii=False, indent=4))
 # インポートシェル書き込み
 with open(impshpath, encoding="utf-8", newline='', mode='w') as impshfile:
     impshfile.write("#!/bin/bash\n")
