@@ -13,15 +13,14 @@
         "checkclm": "DynamicField_XITSMGeneralTextarea1",
         "format": {
             "TicketNumber": "B",
-            "Title": "B",
-            "Priority": "J",
-            "State": "R",
+            "subject": "B",
+            "priority": "J",
+            "status": "R",
             "DynamicField_IncidentType": "O",
             "CustomerUser": "E",
-            "Owner": "Q",
-            "Responsible": "Q",
-            "CreateTime": "F",
-            "DynamicField_ITSMDueDate": "L",
+            "assigned_to": "Q",
+            "start_date": "F",
+            "due_date": "L",
             "DynamicField_TaiouKousuu": "N",
             "DynamicField_XITSMCloseDate": "S",
             "DynamicField_XITSMGeneralTextarea1": "C",
@@ -41,12 +40,24 @@
                 "変更フラグ": "T"
             }
         },
-        "replaceclm": {
-            "Title": {
+        "timeinfo": {
+            "sheetname": "工数明細",
+            "startrow": 31,
+            "checkclm": "spent_on",
+            "format": {
+                "TicketNumber": "B",
+                "spent_on": "C",
+                "user": "F",
+                "hours": "G",
+                "comments": "H"
+                }
+            },
+            "replaceclm": {
+            "subject": {
                 "regexp": "^(.*)$",
                 "repval": "オフサイト保守No.\\1"
             },
-            "DynamicField_ITSMDueDate": {
+            "due_date": {
                 "regexp": "^－$",
                 "repval": ""
             }
@@ -76,15 +87,9 @@
         "21": "1",
         "": ""
     },
-    "mstState": {
-        "SST/保守T\n確認待ち": "4",
-        "SST/保守T確認待ち": "4",
-        "再現待ち": "3",
-        "再起動問題\nとして調査中": "3",
-        "回答済み": "4",
-        "完了": "5",
-        "対応中": "2",
-        "未着手": "1"
+    "mstStatus": {
+        "": "",
+        "完了": ""
     },
     "mstCustomerUser": {
         "SBE\n東海林": "Takuya_Tokairin@suntory.co.jp",
